@@ -5,16 +5,24 @@
  */
 package Simplex;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rafin
  */
 public class GUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form GUI
-     */
+    float xF1C1 = 0, xF1C2 = 0, sF1C3 = 1, sF1C4 = 0, sF1C5 = 0, cF1C6 = 0;
+    float xF2C1 = 0, xF2C2 = 0, sF2C3 = 0, sF2C4 = 1, sF2C5 = 0, cF2C6 = 0;
+    float xF3C1 = 0, xF3C2 = 0, sF3C3 = 0, sF3C4 = 0, sF3C5 = 1, cF3C6 = 0;
+    float ZF4C1 = 0, ZF4C2 = 0, sF4C3 = 0, sF4C4 = 0, sF4C5 = 0, cF4C6 = 0;
+
+    float matriz[][] = new float[4][6];
+
     public GUI() {
+        setTitle("Simplex Maximizacion");
         initComponents();
     }
 
@@ -27,52 +35,326 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        Z1 = new javax.swing.JTextField();
+        Z2 = new javax.swing.JTextField();
+        F1C1 = new javax.swing.JTextField();
+        F1C2 = new javax.swing.JTextField();
+        F1C3 = new javax.swing.JTextField();
+        F2C1 = new javax.swing.JTextField();
+        F2C2 = new javax.swing.JTextField();
+        F2C3 = new javax.swing.JTextField();
+        F3C1 = new javax.swing.JTextField();
+        F3C2 = new javax.swing.JTextField();
+        F3C3 = new javax.swing.JTextField();
+        Calcular = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setText("funcion");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jTextField2.setText("restriccion1");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jTextField3.setText("restriccion2");
-
-        jTextField4.setText("restriccion3");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("jButton1");
-
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setToolTipText("");
+
+        Z1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Z1ActionPerformed(evt);
+            }
+        });
+        Z1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Z1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Z1KeyTyped(evt);
+            }
+        });
+
+        Z2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Z2ActionPerformed(evt);
+            }
+        });
+        Z2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Z2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Z2KeyTyped(evt);
+            }
+        });
+
+        F1C1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F1C1ActionPerformed(evt);
+            }
+        });
+        F1C1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F1C1KeyTyped(evt);
+            }
+        });
+
+        F1C2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F1C2ActionPerformed(evt);
+            }
+        });
+        F1C2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F1C2KeyTyped(evt);
+            }
+        });
+
+        F1C3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F1C3ActionPerformed(evt);
+            }
+        });
+        F1C3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F1C3KeyTyped(evt);
+            }
+        });
+
+        F2C1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F2C1ActionPerformed(evt);
+            }
+        });
+        F2C1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F2C1KeyTyped(evt);
+            }
+        });
+
+        F2C2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F2C2ActionPerformed(evt);
+            }
+        });
+        F2C2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F2C2KeyTyped(evt);
+            }
+        });
+
+        F2C3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F2C3ActionPerformed(evt);
+            }
+        });
+        F2C3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F2C3KeyTyped(evt);
+            }
+        });
+
+        F3C1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F3C1ActionPerformed(evt);
+            }
+        });
+        F3C1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F3C1KeyTyped(evt);
+            }
+        });
+
+        F3C2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F3C2ActionPerformed(evt);
+            }
+        });
+        F3C2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F3C2KeyTyped(evt);
+            }
+        });
+
+        F3C3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F3C3ActionPerformed(evt);
+            }
+        });
+        F3C3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F3C3KeyTyped(evt);
+            }
+        });
+
+        Calcular.setText("calcular");
+        Calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CalcularActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Maximizacion");
+
+        jLabel2.setText("z=");
+
+        jLabel3.setText("x1");
+
+        jLabel4.setText("x2");
+
+        jLabel5.setText("x2");
+
+        jLabel6.setText("+");
+
+        jLabel7.setText("x1");
+
+        jLabel8.setText("x2");
+
+        jLabel9.setText("x1");
+
+        jLabel10.setText("+");
+
+        jLabel11.setText("x2");
+
+        jLabel12.setText("+");
+
+        jLabel13.setText("x1");
+
+        jLabel14.setText("<=");
+
+        jLabel15.setText("<=");
+
+        jLabel16.setText("<=");
+
+        jLabel17.setText("+");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 269, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(F1C1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(F3C1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(F2C1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(F1C2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(F3C2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(F2C2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(F3C3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(F2C3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(F1C3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(35, 35, 35))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(159, 159, 159)
+                        .addComponent(Calcular))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Z1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Z2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 171, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Z1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Z2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel17))
+                .addGap(56, 56, 56)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(F1C2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(F1C3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(F1C1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel16))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(F2C2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(F2C3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(F2C1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel15))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(F3C2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(F3C3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(F3C1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel14))
+                .addGap(57, 57, 57)
+                .addComponent(Calcular)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -80,59 +362,237 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(108, 108, 108)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(38, 38, 38)
-                            .addComponent(jButton1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void Z2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Z2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_Z2ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void Z1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Z1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_Z1ActionPerformed
+
+    private void F1C2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F1C2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_F1C2ActionPerformed
+
+    private void F1C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F1C1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F1C1ActionPerformed
+
+    private void F1C3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F1C3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F1C3ActionPerformed
+
+    private void F2C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F2C1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F2C1ActionPerformed
+
+    private void F2C2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F2C2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F2C2ActionPerformed
+
+    private void F2C3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F2C3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F2C3ActionPerformed
+
+    private void F3C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F3C1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F3C1ActionPerformed
+
+    private void F3C2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F3C2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F3C2ActionPerformed
+
+    private void F3C3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F3C3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F3C3ActionPerformed
+
+    private void CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcularActionPerformed
+        // TODO add your handling code here:
+        /*
+        AQUI VA LA LLAMADA A A LA FUNCION PARA QUE HAGA LOS CALCULOS DE MAXIMIZACION 
+         */
+        llenarMatriz();
+        maxi mari = new maxi(matriz);
+        mari.max();
+        
+
+
+    }//GEN-LAST:event_CalcularActionPerformed
+
+    private void Z1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Z1KeyReleased
+        // TODO add your handling code here:
+        ZF4C1 = Float.parseFloat(Z1.getText()) * -1;
+
+    }//GEN-LAST:event_Z1KeyReleased
+
+    private void Z2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Z2KeyReleased
+        // TODO add your handling code here:
+        ZF4C2 = Float.parseFloat(Z2.getText()) * -1;
+    }//GEN-LAST:event_Z2KeyReleased
+
+    private void Z1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Z1KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_Z1KeyTyped
+
+    private void Z2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Z2KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_Z2KeyTyped
+
+    private void F1C1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F1C1KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_F1C1KeyTyped
+
+    private void F1C2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F1C2KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_F1C2KeyTyped
+
+    private void F1C3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F1C3KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_F1C3KeyTyped
+
+    private void F2C1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F2C1KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_F2C1KeyTyped
+
+    private void F2C2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F2C2KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_F2C2KeyTyped
+
+    private void F2C3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F2C3KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_F2C3KeyTyped
+
+    private void F3C1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F3C1KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_F3C1KeyTyped
+
+    private void F3C2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F3C2KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_F3C2KeyTyped
+
+    private void F3C3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F3C3KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) & c != '.' & (c != KeyEvent.VK_BACK_SPACE)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "ingrese numeros, baboso", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_F3C3KeyTyped
 
     /**
      * @param args the command line arguments
      */
+    public void llenarMatriz() {
+        xF1C1 = Float.parseFloat(F1C1.getText());
+        xF1C2 = Float.parseFloat(F1C2.getText());
+        sF1C3 = 1;
+        sF1C4 = 0;
+        sF1C5 = 0;
+        cF1C6 = Float.parseFloat(F1C3.getText());
+        xF2C1 = Float.parseFloat(F2C1.getText());
+        xF2C2 = Float.parseFloat(F2C2.getText());
+        sF2C3 = 0;
+        sF2C4 = 1;
+        sF2C5 = 0;
+        cF2C6 = Float.parseFloat(F2C3.getText());
+        xF3C1 = Float.parseFloat(F3C1.getText());
+        xF3C2 = Float.parseFloat(F3C2.getText());
+        sF3C3 = 0;
+        sF3C4 = 0;
+        sF3C5 = 1;
+        cF3C6 = Float.parseFloat(F3C3.getText());
+        ZF4C1 = Float.parseFloat(Z1.getText());
+        ZF4C2 = Float.parseFloat(Z2.getText());
+        sF4C3 = 0;
+        sF4C4 = 0;
+        sF4C5 = 0;
+        cF4C6 = 0;
+
+        matriz[0][0] = xF1C1; matriz[1][0] =xF2C1; matriz[2][0] =xF3C1; matriz[3][0] =ZF4C1;
+        matriz[0][1] = xF1C2; matriz[1][1] =xF2C2; matriz[2][1] =xF3C2; matriz[3][1] =ZF4C2;
+        matriz[0][2] = sF1C3; matriz[1][2] =sF2C3; matriz[2][2] =sF3C3; matriz[3][2] =sF4C3;
+        matriz[0][3] = sF1C4; matriz[1][3] =sF2C4; matriz[2][3] =sF3C4; matriz[3][3] =sF4C4;
+        matriz[0][4] = sF1C5; matriz[1][4] =sF2C5; matriz[2][4] =sF3C5; matriz[3][4] =sF4C5;
+        matriz[0][5] = cF1C6; matriz[1][5] =cF2C6; matriz[2][5] =cF3C6; matriz[3][5] =cF4C6;
+
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -166,11 +626,35 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Calcular;
+    private javax.swing.JTextField F1C1;
+    private javax.swing.JTextField F1C2;
+    private javax.swing.JTextField F1C3;
+    private javax.swing.JTextField F2C1;
+    private javax.swing.JTextField F2C2;
+    private javax.swing.JTextField F2C3;
+    private javax.swing.JTextField F3C1;
+    private javax.swing.JTextField F3C2;
+    private javax.swing.JTextField F3C3;
+    private javax.swing.JTextField Z1;
+    private javax.swing.JTextField Z2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
