@@ -428,7 +428,9 @@ public class GUI extends javax.swing.JFrame {
          */
         llenarMatriz();
         maxi mari = new maxi(matriz);
+        //mari.imprimir();
         mari.max();
+        
         
 
 
