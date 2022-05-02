@@ -12,7 +12,7 @@ package Simplex;
 public class comparar {
     
     
-    public float menor(float n1, float n2, float n3){
+    public static float menor(float n1, float n2, float n3){
         float menor=0;
         if (n1<n2){
             System.out.println("pasa n1 de n1<n2");

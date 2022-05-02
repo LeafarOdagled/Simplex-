@@ -559,26 +559,26 @@ public class GUI extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public void llenarMatriz() {
-        xF1C1 = Float.parseFloat(F1C1.getText());
-        xF1C2 = Float.parseFloat(F1C2.getText());
+        xF1C1 = 6;//Float.parseFloat(F1C1.getText());
+        xF1C2 = 2;//Float.parseFloat(F1C2.getText());
         sF1C3 = 1;
         sF1C4 = 0;
         sF1C5 = 0;
-        cF1C6 = Float.parseFloat(F1C3.getText());
-        xF2C1 = Float.parseFloat(F2C1.getText());
-        xF2C2 = Float.parseFloat(F2C2.getText());
+        cF1C6 = 36;//Float.parseFloat(F1C3.getText());
+        xF2C1 = 5;//Float.parseFloat(F2C1.getText());
+        xF2C2 = 5;// Float.parseFloat(F2C2.getText());
         sF2C3 = 0;
         sF2C4 = 1;
         sF2C5 = 0;
-        cF2C6 = Float.parseFloat(F2C3.getText());
-        xF3C1 = Float.parseFloat(F3C1.getText());
-        xF3C2 = Float.parseFloat(F3C2.getText());
+        cF2C6 = 40;//Float.parseFloat(F2C3.getText());
+        xF3C1 = 2; //Float.parseFloat(F3C1.getText());
+        xF3C2 = 4; //Float.parseFloat(F3C2.getText());
         sF3C3 = 0;
         sF3C4 = 0;
         sF3C5 = 1;
-        cF3C6 = Float.parseFloat(F3C3.getText());
-        ZF4C1 = Float.parseFloat(Z1.getText());
-        ZF4C2 = Float.parseFloat(Z2.getText());
+        cF3C6 = 28;//Float.parseFloat(F3C3.getText());
+        ZF4C1 = -5;//Float.parseFloat(Z1.getText());
+        ZF4C2 = -3;//Float.parseFloat(Z2.getText());
         sF4C3 = 0;
         sF4C4 = 0;
         sF4C5 = 0;
