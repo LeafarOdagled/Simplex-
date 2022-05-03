@@ -65,6 +65,9 @@ public class GUI extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Resultado = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -357,20 +360,47 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
+        Resultado.setColumns(20);
+        Resultado.setRows(5);
+        jScrollPane1.setViewportView(Resultado);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -430,6 +460,7 @@ public class GUI extends javax.swing.JFrame {
         maxi mari = new maxi(matriz);
         //mari.imprimir();
         mari.max();
+        
         
         
 
@@ -561,26 +592,26 @@ public class GUI extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public void llenarMatriz() {
-        xF1C1 = 6;//Float.parseFloat(F1C1.getText());
-        xF1C2 = 2;//Float.parseFloat(F1C2.getText());
+        xF1C1 = Float.parseFloat(F1C1.getText());
+        xF1C2 = Float.parseFloat(F1C2.getText());
         sF1C3 = 1;
         sF1C4 = 0;
         sF1C5 = 0;
-        cF1C6 = 36;//Float.parseFloat(F1C3.getText());
-        xF2C1 = 5;//Float.parseFloat(F2C1.getText());
-        xF2C2 = 5;// Float.parseFloat(F2C2.getText());
+        cF1C6 = Float.parseFloat(F1C3.getText());
+        xF2C1 = Float.parseFloat(F2C1.getText());
+        xF2C2 = Float.parseFloat(F2C2.getText());
         sF2C3 = 0;
         sF2C4 = 1;
         sF2C5 = 0;
-        cF2C6 = 40;//Float.parseFloat(F2C3.getText());
-        xF3C1 = 2; //Float.parseFloat(F3C1.getText());
-        xF3C2 = 4; //Float.parseFloat(F3C2.getText());
+        cF2C6 = Float.parseFloat(F2C3.getText());
+        xF3C1 = Float.parseFloat(F3C1.getText());
+        xF3C2 = Float.parseFloat(F3C2.getText());
         sF3C3 = 0;
         sF3C4 = 0;
         sF3C5 = 1;
-        cF3C6 = 28;//Float.parseFloat(F3C3.getText());
-        ZF4C1 = -5;//Float.parseFloat(Z1.getText());
-        ZF4C2 = -3;//Float.parseFloat(Z2.getText());
+        cF3C6 = Float.parseFloat(F3C3.getText());
+        ZF4C1 = Float.parseFloat(Z1.getText());
+        ZF4C2 = Float.parseFloat(Z2.getText());
         sF4C3 = 0;
         sF4C4 = 0;
         sF4C5 = 0;
@@ -638,6 +669,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField F3C1;
     private javax.swing.JTextField F3C2;
     private javax.swing.JTextField F3C3;
+    private javax.swing.JTextArea Resultado;
     private javax.swing.JTextField Z1;
     private javax.swing.JTextField Z2;
     private javax.swing.JLabel jLabel1;
@@ -658,5 +690,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
