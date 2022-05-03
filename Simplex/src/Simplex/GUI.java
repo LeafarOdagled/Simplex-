@@ -610,8 +610,8 @@ public class GUI extends javax.swing.JFrame {
         sF3C4 = 0;
         sF3C5 = 1;
         cF3C6 = Float.parseFloat(F3C3.getText());
-        ZF4C1 = Float.parseFloat(Z1.getText());
-        ZF4C2 = Float.parseFloat(Z2.getText());
+        ZF4C1 = Float.parseFloat(Z1.getText()) *-1;
+        ZF4C2 = Float.parseFloat(Z2.getText()) * -1;
         sF4C3 = 0;
         sF4C4 = 0;
         sF4C5 = 0;
